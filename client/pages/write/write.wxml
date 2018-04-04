@@ -1,0 +1,12 @@
+<!--pages/write/write.wxml-->
+<view class="container">
+  <text class="story-label margin-top">故事内容</text>
+  <input class="story-input margin-top"></input>
+  <view class="price-containter margin-top">
+    <button class=".price-btn">1</button>
+    <button class=".price-btn">5</button>
+    <button class=".price-btn">10</button>
+    <button class=".price-btn">20</button>
+  </view>
+  <button class="margin-top">分享故事</button>
+</view>

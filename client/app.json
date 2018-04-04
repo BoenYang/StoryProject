@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundColor":"#F6F6F6",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "讲个故事",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的记录"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "余额提现"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "常见问题"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+/* pages/write/write.wxss */
+
+.margin-top {
+  margin-top: 50rpx;
+}
+
+.story-input {
+  display: block; 
+  width: 80%;
+  height: 500rpx;
+  padding: 6rpx 12rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background-color: #ffffff; 
+  border: 1px solid #cccccc; 
+  border-radius: 4px;
+}
+
+.story-input:focus { 
+  border-color: #66afe9; 
+}
+
+.price-containter {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.price-btn {
+  width : 120rpx;
+}
