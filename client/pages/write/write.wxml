@@ -8,5 +8,5 @@
     <button class=".price-btn">10</button>
     <button class=".price-btn">20</button>
   </view>
-  <button class="margin-top">分享故事</button>
+  <button class="margin-top" bindtap='onCreateStory'>分享故事</button>
 </view>

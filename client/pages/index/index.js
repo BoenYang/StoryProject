@@ -11,6 +11,10 @@ Page({
         requestResult: ''
     },
 
+    onLoad: function(){
+      this.login();
+    },
+
     // 用户登录示例
     login: function() {
         if (this.data.logged) return
@@ -53,5 +57,11 @@ Page({
                 console.log('登录失败', error)
             }
         })
-    }
+    },
+
+    onWriteClick: function () {
+      wx.navigateTo({
+        url: '../write/write'
+      })
+    },
 })
