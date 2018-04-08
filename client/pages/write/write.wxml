@@ -1,7 +1,7 @@
 <!--pages/write/write.wxml-->
 <view class="container">
   <text class="story-label margin-top">故事内容</text>
-  <input class="story-input margin-top"></input>
+  <input class="story-input margin-top" value='{{story_content}}' bindinput='onStoryContentChange'></input>
   <view class="price-containter margin-top">
     <button class=".price-btn">1</button>
     <button class=".price-btn">5</button>

@@ -30,3 +30,7 @@
 .price-btn {
   width : 120rpx;
 }
+
+.price-btn-press {
+  background-color: #66afe9;
+}

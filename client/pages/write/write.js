@@ -17,7 +17,14 @@ Page({
   
   },
 
-  onCreateStory:function(){
-    
+  onCreateStory:function(e){
+    console.log(this.data.story_content);
+  },
+
+  onStoryContentChange:function(e){
+    this.setData({
+      story_content:e.detail.value
+    });
+
   }
 })
