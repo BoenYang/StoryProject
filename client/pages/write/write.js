@@ -19,7 +19,14 @@ Page({
 
   onCreateStory:function(e){
     console.log(this.data.story_content);
-    story.create_story(this.data.story_content);
+    story.create_story(this.data.story_content,
+      function(result){
+        console.log(result.data);
+      },
+      function(){
+
+      }
+    );
   },
 
   onStoryContentChange:function(e){
