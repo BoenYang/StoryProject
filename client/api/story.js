@@ -1,18 +1,11 @@
 var config = require('../config')
+var qcloud = require('../vendor/wafer2-client-sdk/index')
 
-function create_story(options){
-
-  wx.request({
+function create_story(story_content){
+  qcloud.request({
     url: config.service.createStoryUrl,
-    method: 'Get',
-    success: function (result) {
-      var data = result.data;
-    },
-
-    // 响应错误
-    fail: function (loginResponseError) {
-
-    },
+    header: { 'content-type': 'application/json' },
+    data:{content:story_content}
   });
 }
 
