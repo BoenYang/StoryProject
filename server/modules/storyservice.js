@@ -16,7 +16,10 @@ function create_story(ctx,next){
       return mysql('t_story').insert({content,price,user_id,id}).then((res)=>{
           debug("create story success");
       }).then(()=> {
-        ctx.state.data = {story_id:id,story_price:price};
+        const create_user = {};
+        create_user.avatarUrl = userinfo.avatarUrl;
+        create_user.nickName = userinfo.nickName;
+        ctx.state.data = {story_id:id,story_price:price,create_user:create_user};
         return next();
       });
   });

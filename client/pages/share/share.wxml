@@ -1,0 +1,15 @@
+<!--pages/share/share.wxml-->
+
+<view class="container">
+    <!-- 用户登录测试 -->
+    <view class="userinfo">
+        <image
+            class="userinfo-avatar"
+            src="{{userInfo.avatarUrl}}"
+            background-size="cover"
+        ></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <button class="share-btn" open-type="share">转发给朋友</button>
+    </view>
+
+</view>

@@ -3,8 +3,8 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-//var host = 'https://kyjbvnoh.qcloud.la';
-var host = 'http://localhost:5757';
+var host = 'https://kyjbvnoh.qcloud.la';
+//var host = 'http://192.168.40.111:5757';
 
 var config = {
 

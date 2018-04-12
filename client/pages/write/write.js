@@ -10,18 +10,15 @@ Page({
     story_content : ""
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
-
   onCreateStory:function(e){
     console.log(this.data.story_content);
     story.create_story(this.data.story_content,
       function(result){
-        console.log(result.data);
+        var data = result.data.data;
+        console.log(result.data.data);
+        wx.navigateTo({
+          url: '../share/share?story_id=' + data.story_id + "&price=" + data.story_price + "&create_user=" + JSON.stringify(data.create_user),
+        });
       },
       function(){
 
