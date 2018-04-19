@@ -2,13 +2,13 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
+const app = getApp()
 
 Page({
     data: {
         userInfo: {},
-        logged: false,
-        takeSession: false,
-        requestResult: ''
+        logged:false,
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
     },
 
     onLoad: function(){
@@ -17,46 +17,19 @@ Page({
 
     // 用户登录示例
     login: function() {
-        if (this.data.logged) return
-
-        util.showBusy('正在登录')
-        var that = this
-
-        // 调用登录接口
-        qcloud.login({
-            success(result) {
-                if (result) {
-                    util.showSuccess('登录成功')
-                    that.setData({
-                        userInfo: result,
-                        logged: true
-                    })
-                } else {
-                    // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
-                    qcloud.request({
-                        url: config.service.requestUrl,
-                        login: true,
-                        success(result) {
-                            util.showSuccess('登录成功')
-                            that.setData({
-                                userInfo: result.data.data,
-                                logged: true
-                            })
-                        },
-
-                        fail(error) {
-                            util.showModel('请求失败', error)
-                            console.log('request fail', error)
-                        }
-                    })
-                }
-            },
-
-            fail(error) {
-                util.showModel('登录失败', error)
-                console.log('登录失败', error)
-            }
-        })
+      if(app.globalData.userInfo){
+        this.setData({
+          userInfo: app.globalData.userInfo,
+          logged: app.globalData.logged
+        });
+      }else if(this.data.canIUse){
+        app.userInfoReadyCallback = res => {
+          this.setData({
+            userInfo: res,
+            logged: app.globalData.logged
+          })
+        }
+      }        
     },
 
     onWriteClick: function () {
