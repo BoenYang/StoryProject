@@ -2,6 +2,7 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
+var story = require("../../api/story")
 const app = getApp()
 
 Page({
@@ -35,6 +36,7 @@ Page({
     onWriteClick: function () {
       wx.navigateTo({
         url: '../write/write'
-      })
+      });
+    
     },
 })

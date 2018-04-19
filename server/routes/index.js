@@ -21,4 +21,6 @@ router.get('/user', validationMiddleware, controllers.user)
 
 router.get('/create_story',story_service.create_story,controllers.story)
 
+router.get('/get_story', story_service.get_story, controllers.story)
+
 module.exports = router

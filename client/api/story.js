@@ -11,6 +11,21 @@ function create_story(story_content,success,fail){
   });
 }
 
+function get_story(story_id,success,fail){
+  qcloud.request({
+    url: config.service.getStoryUrl,
+    header: { 'content-type': 'application/json' },
+    data: { id: story_id },
+    success: success,
+    fail: fail
+  });
+}
+
+function get_full_story(story_id,success,fail){
+  
+}
+
 module.exports = {
-  create_story:create_story
+  create_story:create_story,
+  get_story:get_story
 }

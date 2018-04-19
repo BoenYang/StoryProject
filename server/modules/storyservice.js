@@ -25,6 +25,30 @@ function create_story(ctx,next){
   });
 }
 
+function get_story(ctx,next){
+  debug(ctx.request.query);
+    return validation(ctx.req).then(({loginState,userinfo})=>{
+      const id = ctx.request.query.id;
+      return mysql('t_story').select('*').where({id}).then(result => {
+        const {user_id : userId , price : story_price} = result[0];
+        const open_id = userId;
+        debug("get story user id " + userId);
+        return mysql('cSessionInfo').select('*').where({
+          open_id
+        }).then(result=>{
+          const {user_info : userInfo} = result[0];
+          const create_user = {};
+          const user = JSON.parse(userInfo);
+          create_user.avatarUrl = user.avatarUrl;
+          create_user.nickName = user.nickName;
+          ctx.state.data = { story_id: id, story_price: story_price, create_user_info: create_user};
+          return next();
+        });
+      });
+  });
+}
+
 module.exports = {
-  create_story:create_story
+  create_story:create_story,
+  get_story:get_story
 }

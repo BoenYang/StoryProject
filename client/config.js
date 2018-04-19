@@ -3,8 +3,8 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://kyjbvnoh.qcloud.la';
-//var host = 'http://192.168.40.111:5757';
+//var host = 'https://kyjbvnoh.qcloud.la';
+var host = 'http://192.168.40.111:5757';
 
 var config = {
 
@@ -24,7 +24,9 @@ var config = {
         // 上传图片接口
         uploadUrl: `${host}/weapp/upload`,
 
-        createStoryUrl: `${host}/weapp/create_story`
+        createStoryUrl: `${host}/weapp/create_story`,
+
+        getStoryUrl: `${host}/weapp/get_story`
     }
 };
 
